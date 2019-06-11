@@ -303,9 +303,6 @@
     .line 112
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 113
-    invoke-virtual {p1, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
     .line 117
     :cond_5
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
