@@ -3676,8 +3676,6 @@
 
     const v8, 0x7f090476
 
-    if-nez v6, :cond_3
-
     .line 1068
     iget-object v6, p0, Lcom/weico/international/activity/MainFragmentActivity;->navigationView:Landroid/support/design/widget/NavigationView;
 
@@ -3698,8 +3696,6 @@
     invoke-virtual {v6, v9}, Lcom/weico/international/activity/v4/Setting;->loadBoolean(Ljava/lang/String;)Z
 
     move-result v6
-
-    if-nez v6, :cond_4
 
     .line 1072
     iget-object v6, p0, Lcom/weico/international/activity/MainFragmentActivity;->navigationView:Landroid/support/design/widget/NavigationView;
