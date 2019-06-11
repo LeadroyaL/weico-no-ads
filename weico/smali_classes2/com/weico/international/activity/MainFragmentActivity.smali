@@ -711,40 +711,6 @@
 .method private checkUpdateForSinaForceUploadVersion()V
     .locals 5
 
-    .line 774
-    invoke-static {}, Lcom/weico/international/activity/v4/Setting;->getInstance()Lcom/weico/international/activity/v4/Setting;
-
-    move-result-object v0
-
-    const-string v1, "key_last_update_check"
-
-    invoke-virtual {v0, v1}, Lcom/weico/international/activity/v4/Setting;->loadLong(Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    .line 775
-    invoke-static {}, Lcom/weico/international/utility/ParamsUtil;->getInternationParams()Ljava/util/Map;
-
-    move-result-object v2
-
-    const-string v3, "version"
-
-    const-string v4, "3.1.6"
-
-    .line 776
-    invoke-interface {v2, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 777
-    invoke-static {}, Lcom/weibo/sdk/android/api/WeicoRetrofitAPI;->getInternationalService()Lcom/weibo/sdk/android/api/WeicoRetrofitAPI$InternationalService;
-
-    move-result-object v3
-
-    new-instance v4, Lcom/weico/international/activity/MainFragmentActivity$12;
-
-    invoke-direct {v4, p0, v0, v1}, Lcom/weico/international/activity/MainFragmentActivity$12;-><init>(Lcom/weico/international/activity/MainFragmentActivity;J)V
-
-    invoke-interface {v3, v2, v4}, Lcom/weibo/sdk/android/api/WeicoRetrofitAPI$InternationalService;->checkUpdate(Ljava/util/Map;Lcom/weibo/sdk/android/api/WeicoCallbackString;)V
-
     return-void
 .end method
 
