@@ -555,7 +555,7 @@
 .end method
 
 .method public addAll(Ljava/util/Collection;)V
-    .locals 3
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -563,6 +563,49 @@
             "+TT;>;)V"
         }
     .end annotation
+
+
+if-eqz p1, :goto_old
+invoke-interface {p1},Ljava/util/Collection;->isEmpty()Z
+move-result v0
+if-nez v0, :goto_old
+invoke-interface {p1},Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+move-result-object v0
+:loop_start
+invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+move-result v1
+if-eqz v1, :goto_old
+invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+move-result-object v1
+instance-of v2, v1, Lcom/weico/international/model/sina/Status;
+if-eqz v2, :loop_start
+check-cast v1, Lcom/weico/international/model/sina/Status;
+invoke-virtual {v1}, Lcom/weico/international/model/sina/Status;->getViewType()I
+move-result v2
+invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+move-result-object v3
+const-string v4, "ccttff"
+invoke-static {v4,v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+invoke-virtual {v1}, Lcom/weico/international/model/sina/Status;->getText()Ljava/lang/String;
+move-result-object v3
+invoke-static {v4,v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+iget-boolean v2,v1,Lcom/weico/international/model/sina/Status;->isUVEAd:Z
+invoke-static {v2}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
+move-result-object v3
+invoke-static {v4,v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+if-nez v2,:remove
+goto :loop_start
+:remove
+invoke-interface {v0},Ljava/util/Iterator;->remove()V
+const-string v4, "ccttff"
+const-string v3, "remove it!"
+invoke-static {v4,v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+goto :loop_start
+
+
+
+    :goto_old
+
 
     .line 354
     iget-object v0, p0, Lcom/jude/easyrecyclerview/adapter/RecyclerArrayAdapter;->mEventDelegate:Lcom/jude/easyrecyclerview/adapter/EventDelegate;

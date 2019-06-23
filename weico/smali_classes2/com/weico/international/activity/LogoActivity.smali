@@ -416,7 +416,7 @@
 
     if-lez v4, :cond_3
 
-    const-string v0, "GDTAD"
+    const-string v0, "main"
 
     return-object v0
 

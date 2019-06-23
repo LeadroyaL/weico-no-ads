@@ -322,46 +322,6 @@
     .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 
-    if-eqz p1, :cond_1
-
-    if-nez p2, :cond_0
-
-    goto :goto_0
-
-    .line 94
-    :cond_0
-    sget-object v0, Lcom/weico/international/manager/ManagerFactory;->INSTANCE:Lcom/weico/international/manager/ManagerFactory;
-
-    const-class v1, Lcom/weico/international/manager/IDownloadManager;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Lcom/weico/international/manager/ManagerFactory;->getManager(Ljava/lang/Class;Z)Lcom/weico/international/manager/IWeicoManager;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/weico/international/manager/IDownloadManager;
-
-    .line 95
-    invoke-interface {v0, p2}, Lcom/weico/international/manager/IDownloadManager;->enableCallback(Lcom/weico/international/manager/IDownloadManager$IDownloadCallback;)Lcom/weico/international/manager/IDownloadManager;
-
-    move-result-object p2
-
-    .line 96
-    invoke-virtual {p0, p1}, Lcom/weico/international/other/UpdateDownloadManager;->generateApkPath(Lcom/weico/international/flux/model/UpdateConfig;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Lcom/weico/international/flux/model/UpdateConfig;->getUrl()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-interface {p2, v0, p1}, Lcom/weico/international/manager/IDownloadManager;->startDownload(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object p2
-
-    :cond_1
-    :goto_0
     const/4 p1, 0x0
 
     return-object p1
