@@ -4,7 +4,7 @@
 
 ### 如果 star 的话，在这里 star ，不要在各个子仓库。
 
-
+- 2021.12.01 最新版无法重打包，此系列暂时终结
 - [3.5.0 https://github.com/LeadroyaL/weico-no-ads-350](https://github.com/LeadroyaL/weico-no-ads-350) 2020.4.7
 - [3.3.9 https://github.com/LeadroyaL/weico-no-ads-339](https://github.com/LeadroyaL/weico-no-ads-339) 2020.1.2
 - [3.3.1 https://github.com/LeadroyaL/weico-no-ads-331](https://github.com/LeadroyaL/weico-no-ads-331) 2019.10.4
